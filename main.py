@@ -1,15 +1,17 @@
 from kivy.app import App
 from kivy.lang import Builder
-
 from myfirebase import MyFirebase
 from telas import *
 from botoes import *
 from bannervenda import BannerVenda
 import requests
 import os
+import certifi
 from functools import partial
 from bannervendedor import BannerVendedor
 from datetime import date
+
+os.environ["SSL_CERT_FILE"] = certifi.where()
 
 GUI = Builder.load_file("main.kv")
 class MainApp(App):
